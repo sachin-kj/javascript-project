@@ -1,13 +1,22 @@
-const todoList = ['watch', 'sleep'];
+const todoList = [{
+  name :'watch',
+  time :'12-02-2022'
+},
+ {name :'sleep',
+time : '02-10-2019'
+}];
 
 function rendertodo() {
   let elem = '';
   for (let i = 0; i < todoList.length; i++) {
-    const a = todoList[i];
+    const todoobj = todoList[i];
+    const name=todoobj.name;
+    const time=todoobj.time; 
     const html = `
       <p>
-        ${a}
-        <button onclick="deleteTodo(${i})">delete</button>
+        ${name} ${time}
+        <button class="del" onclick="todoList.splice(${i},1);
+   ;rendertodo()">delete</button>
       </p>
     `;
     elem += html;
@@ -16,19 +25,27 @@ function rendertodo() {
 }
 
 function addtodo() {
-  const input = document.querySelector('.js-name-input');
-  const name = input.value.trim();
+  const taskinput = document.querySelector('.js-name-input');
+  const dateinput=document.querySelector('.js-date');
+  const duedate=dateinput.value;
+  const name = taskinput.value;
   if (name === '') return;
 
-  todoList.push(name);
-  input.value = '';
+  todoList.push({
+    name:name,
+  time : duedate,
+});
+  taskinput.value = '';
+  dateinput.value='';
   rendertodo();
 }
+function cleartodo(){
+  todoList.length=0;
+  rendertodo();
+  
 
-function deleteTodo(index) {
-  todoList.splice(index, 1); // remove 1 item at that position
-  rendertodo(); // re-render list after deletion
 }
 
+// 
 // render initial todos on load
 rendertodo();
