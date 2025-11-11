@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button>hello</button>
+  <button class="js-Elem">good morning</button>
+  <script>
+    (document.querySelector('button')).innerHTML='hijack';//object is fetched by normal string
+    (document.querySelector('.js-Elem')).innerHTML="good evening";//class is fetched by dot operator
+    console.log(typeof button);
+    console.log(document.querySelector('body'));
+    const buttonelem=document.querySelector('.js-Elem');
+    
+  </script>
+</body>
+</html>

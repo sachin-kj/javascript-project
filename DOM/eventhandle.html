@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./evhand.css">
+</head>
+
+<body>
+  <p>YouTube Subscribe button</p>
+  
+  <button onclick="
+   fun()"
+    class="js-subscribe-button">subscribe</button>
+    <p>Amazon shipping calculator</p>
+    <p>On shopping below $30 shipping charge is $10 </p>
+    <p>on shopping above $30 there is no shipping charge</p>
+
+    <input placeholder="cost of order" class="js-input" onkeydown="console.log(event.key);
+      if(event.key ==='Enter'){
+        calc();
+      }">
+      </input>
+    <button onclick="calc()" class="js-calculate">calculate</button>
+    <p class="js-output"></p>
+
+  <script>
+    function calc(){
+      const cost=Number(document.querySelector(".js-input").value);
+      if(cost<30){
+        const val=cost+10;
+        document.querySelector(".js-output").innerHTML=`${val}`;
+      }
+      else {
+        document.querySelector(".js-output").innerHTML=`$${cost}`;
+      }
+    }
+
+
+
+   function fun(){
+       const button=document.querySelector('.js-subscribe-button')//use innerText for avoiding space problem in button
+    if(button.innerText==='subscribe'){
+      button.innerText='subscribed';
+      button.classList.add('is-subscribed');
+    }
+    else{
+      button.innerText='subscribe';
+      button.classList.remove('is-subscribed');
+    }
+    }
+  </script>
+  
+</body>
+</html>

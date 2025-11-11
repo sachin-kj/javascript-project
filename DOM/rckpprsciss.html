@@ -2,78 +2,25 @@
 <html>
   <head>
     <title>Rock Paper Scissors</title>
-    <style>
-      body{
-        background-color: rgb(25, 25, 25);
-        color: white;
-        font-family: Arial;
-      }
- 
-
-      .Title{
-        font-size: 30px;
-        font-weight: bold;
-      }
-      .pic{
-        height: 50px;
-        border-radius: 10px;
-       
-      }
-      .move-button{
-        background-color: rgba(0,0,0,0);
-        border: 3px solid white;
-        height: 120px;
-        width: 120px;
-        border-radius: 60px;
-        margin-right: 10px;
-        cursor: pointer;
-      }
-      .move-button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: scale(1.1);
-  transition: 0.2s;
-}
-.move-button:active {
-  transform: scale(0.95);
-}
-.js-reset {
-  background-color: white;
-  color: black;
-  font-size: 18px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-.js-reset:hover {
-  background-color: lightgray;
-}
-
-    </style>
   </head>
   <body>
-    <p class="Title">Rock Paper Scissors</p>
+    <p>Rock Paper Scissors</p>
     <button onclick="
-      playGame('rock');"
-       class="move-button"><img src="images/download.png" class="pic">
-    </button>
+      playGame('rock');
+    ">Rock</button>
 
     <button onclick="
       playGame('paper');
-
-    " class="move-button"><img src="images/paperemoji.png" class="pic"></button>
+    ">Paper</button>
 
     <button onclick="
       playGame('scissors');
-    " class="move-button"><img src="images/scissor emoji.png"class="pic"></button>
-
-
+    ">Scissors</button>
     <p class="js-res"></p>
     <p class="js-moves"></p>
     <p class="js-score"></p>
+  
 
-    
     <button onclick="
       score.wins = 0;
       score.loss = 0;
@@ -135,9 +82,8 @@
           } else {
             result = 'Tie.';
           }
-        } else if (playerMove === 'paper') {   
+        } else if (playerMove === 'paper') {
           if (computerMove === 'rock') {
-            //nothing
             result = 'You win.';
           } else if (computerMove === 'paper') {
             result = 'Tie.';
@@ -171,19 +117,6 @@
                   document.querySelector('.js-score').innerHTML =
           `wins ${score.wins} lose ${score.loss} tie ${score.tie}`;
           }
-            document.body.addEventListener('keydown', (event) => {
-      console.log('keydown');
-      if(event.key=='r'|| event.key=='R')
-      playGame('rock');
-   else if(event.key=='p'|| event.key=='p')
-      playGame('paper');
-    else if(event.key=='s'|| event.key=='S')
-      playGame('scissors');
-    
-
-    });
-
-
     </script>
   </body>
 </html> 

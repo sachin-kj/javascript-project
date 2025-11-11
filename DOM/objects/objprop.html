@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const obj1={
+      m:"google",
+    };
+    const obj2={
+      n:"google"
+    };
+    const obj3={
+      method(){
+        console.log("sachin");
+      }
+    }
+    console.log(obj1);
+    console.log(obj1===obj2);
+    console.log(obj1.m==obj2.n);
+    obj1.m="facebook";
+    console.log(obj1.m);
+    const {m}=obj1;// const m=obj1.m;if variable name is same
+  obj3.method();
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>learning fetching the objects through the square brackets in java script</p>
+</body>
+<script>
+  const product={
+    name :'shirt',
+    ['delivery-time']:'1 day',
+    ratings : {
+      stars : 4.3,
+      count : 25
+    },
+    fun : function ab(){
+      console.log('my name is sachin');
+    }
+  };
+  console.log(product['name']);
+  console.log(product['delivery-time']);
+  console.log(product.ratings.stars);
+  product.fun();
+</script>
+</html>
